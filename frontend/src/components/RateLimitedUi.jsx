@@ -1,5 +1,5 @@
 import { Zap } from 'lucide-react'
-const RateLimitedUi = ({ setRate }) => {
+const RateLimitedUi = () => {
   return (
     <div className = "flex items-center space-x-3 bg-blue-100 border border-blue-300 rounded-lg p-4 max-w-4xl mx-auto mt-10">
         <div className="flex items-center justify-center w-14 h-14 bg-blue-200 rounded-full ">

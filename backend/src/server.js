@@ -1,12 +1,16 @@
 import dotenv from "dotenv"
 dotenv.config()
 import express from "express"
+import cors from "cors"
 import notesRoute from "./routes/notesRoute.js"
 import connectDB from "./config/db.js"
 import rater from "./middlewares/rateLimiter.js"
 const PORT = process.env.PORT || 5001
 const app = express() //express app instance
 app.use(express.json())//req.body parser middleware
+app.use(cors({
+    origin: "http://localhost:5173",
+}))
 app.use("/api/notes",rater)//ratelimit handler middleware
 // Route hnadler middleware
 app.use("/api/notes",notesRoute)
